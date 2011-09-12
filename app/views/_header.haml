@@ -1,0 +1,17 @@
+%header
+  %nav
+    %a.top
+      codepuree
+    %a.sub
+      Puree people
+    %a.sub
+      = t('home.navigation.competences')
+    %a.sub.last
+      = t('home.navigation.contact')
+    
+  %nav
+    %a.top
+      = t('home.navigation.projects')
+      
+  %div.lang
+    = I18n.available_locales.join('/')

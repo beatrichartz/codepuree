@@ -1,0 +1,34 @@
+@import mixins/var.sass
+
+body
+  font:
+    family: $base_font
+    size: 28px
+    weight: bold
+  color: $text_color
+
+header
+  overflow: hidden
+  margin-bottom: 100px
+  position: absolute
+  top: 30px
+  left: 0
+  width: 100%
+  z-index: 2
+#content
+  margin: 0 auto
+  min-height: 500px
+  width: 98%
+  min-width: 980px
+  max-width: 1380px
+  position: relative
+  
+#inner
+  border-top: 1px solid $text_color
+  padding: 5px 0
+  position: absolute
+  top: 150px
+  left: 0
+  z-index: 1
+  p
+    margin-bottom: 15px

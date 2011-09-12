@@ -1,0 +1,27 @@
+@import mixins/var.sass
+
+nav, .lang
+  display: inline-block
+  border-top: 1px solid $text_color
+  background: $back_color
+  width: 25%
+  a
+    float: left
+    clear: left
+    margin: 3px 0
+    &.top
+      display: inline-block
+      margin-top: 0
+    &.sub
+      display: none
+  &:hover
+    border-bottom: 1px solid $text_color
+    a.sub
+      display: inline-block
+
+nav
+  float: left
+  margin-right: 10px
+
+.lang
+  float: right
