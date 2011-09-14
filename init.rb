@@ -1,18 +1,14 @@
 ROOT_DIR = File.expand_path(File.dirname(__FILE__)) unless defined? ROOT_DIR
 
 require "rubygems"
+require "bundler"
+Bundler.require :default
 
 begin
   require File.expand_path("vendor/dependencies/lib/dependencies", File.dirname(__FILE__))
 rescue LoadError
   require "dependencies"
 end
-
-require "monk/glue"
-require "ohm"
-require "haml"
-require "sass"
-require "i18n"
 
 class Main < Monk::Glue
   set :app_file, __FILE__
