@@ -8,11 +8,11 @@ rescue LoadError
   require "dependencies"
 end
 
+require "erb"
+require "bundler/setup"
+Bundler.require :default
+
 require "monk/glue"
-require "ohm"
-require "haml"
-require "sass"
-require "i18n"
 
 class Main < Monk::Glue
   set :app_file, __FILE__
@@ -21,6 +21,11 @@ end
 
 # Connect to redis database.
 Ohm.connect(monk_settings(:redis))
+
+# Load all lib files.
+Dir[root_path("lib/**/*.rb")].each do |file|
+  require file
+end
 
 # Load all application files.
 Dir[root_path("app/**/*.rb")].each do |file|

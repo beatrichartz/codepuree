@@ -27,5 +27,18 @@ class Main
     def t(*args)
       I18n.t(*args)
     end
+    
+    def path_to(obj)
+      '/' + unprefixed_path_to(obj)
+    end
+    
+    def url_to(obj)
+      'http://' + request.env["HTTP_HOST"] + '/' + unprefixed_path_to(obj)
+    end
+    
+    private
+      def unprefixed_path_to(obj)
+        Class == obj.class ? (obj.to_s.demodulize.downcase + 's/') : (obj.class.to_s.demodulize.downcase + '/' + obj.id)
+      end
   end
 end
