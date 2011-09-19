@@ -1,0 +1,20 @@
+header
+  nav
+    a.top href=url('/')
+      = 'codepuree'
+    a.sub href=url_to(Person)
+      = 'Puree people'
+    a.sub href=url('/competences')
+      = t('home.navigation.competences')
+    a.sub href=url('/contact')
+      = t('home.navigation.contact')
+    
+  nav
+    a.top href=url_to(Work)
+      = t('home.navigation.projects')
+    - @works.each do |work|
+      a.sub href=url_to(work)
+        = work.title
+      
+  div.side.lang
+    = I18n.available_locales.join('/')

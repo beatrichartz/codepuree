@@ -24,11 +24,19 @@ header
   position: relative
   
 #inner
-  border-top: 1px solid $text_color
   padding: 5px 0
   position: absolute
   top: 150px
+  width: 100%
   left: 0
   z-index: 1
   p
     margin-bottom: 15px
+  &.home, .main, .side
+    border-top: 1px solid $text_color
+  .main
+    width: 74%
+    float: left
+  .side
+    width: 25%
+    float: right

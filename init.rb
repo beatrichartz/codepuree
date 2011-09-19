@@ -8,7 +8,6 @@ rescue LoadError
   require "dependencies"
 end
 
-require "erb"
 require "bundler/setup"
 Bundler.require :default
 
@@ -16,9 +15,11 @@ require "monk/glue"
 
 class Main < Monk::Glue
   set :app_file, __FILE__
-  use Rack::Session::Cookie
+  use Rack::Session::Cookie  
 end
 
+set :markdown, :layout_engine => :slim
+set :slim, :auto_escape => false
 # Connect to redis database.
 Ohm.connect(monk_settings(:redis))
 
