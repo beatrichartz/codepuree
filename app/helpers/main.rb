@@ -2,7 +2,7 @@ class Main
   helpers do
     # Generate SLIM and escape HTML by default.
     def slim(template, options = {}, locals = {})
-      options[:escape_html] = true unless options.include?(:escape_html)
+      options = {:escape_html => true}.merge(options)
       super(template, options, locals)
     end
 

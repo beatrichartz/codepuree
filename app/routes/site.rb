@@ -3,7 +3,7 @@ class Main
   codepuree_before_filters
   
   get "/" do
-    slim :home
+    slim :'home/index'
   end
   
   get "/competences/?" do
