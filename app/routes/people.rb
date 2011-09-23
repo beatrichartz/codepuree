@@ -1,4 +1,4 @@
 class Main
   extend Mixins::Routes::Restful
-  restful(:works)
+  restful(:people)
 end

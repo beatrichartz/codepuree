@@ -1,4 +1,4 @@
-class People < Ohm::Model
+class Person < Ohm::Model
   reference :codepuree, Codepuree
   
   collection :works, Work

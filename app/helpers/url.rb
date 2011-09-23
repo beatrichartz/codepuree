@@ -16,7 +16,7 @@ class Main
 
     private
       def unprefixed_path_to(obj)
-        Class == obj.class ? (obj.to_s.demodulize.downcase.pluralize) : (obj.class.to_s.demodulize.downcase + '/' + obj.id)
+        Class == obj.class ? (obj.to_s.demodulize.downcase.pluralize) : (obj.class.to_s.demodulize.downcase.pluralize + '/' + obj.id)
       end
   end
 end
